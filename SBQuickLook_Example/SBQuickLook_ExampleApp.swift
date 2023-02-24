@@ -11,7 +11,7 @@ import SwiftUI
 struct SBQuickLook_ExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView()                
         }
     }
 }

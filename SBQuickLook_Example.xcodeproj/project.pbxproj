@@ -11,6 +11,8 @@
 		AFD908F729A7F9D2009AF577 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD908F629A7F9D2009AF577 /* ContentView.swift */; };
 		AFD908F929A7F9D2009AF577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD908F829A7F9D2009AF577 /* Assets.xcassets */; };
 		AFD908FD29A7F9D2009AF577 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD908FC29A7F9D2009AF577 /* Preview Assets.xcassets */; };
+		AFD9090E29A80EF3009AF577 /* sample-local-pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AFD9090D29A80EF3009AF577 /* sample-local-pdf.pdf */; };
+		AFD9091129A811DA009AF577 /* SBQuickLook in Frameworks */ = {isa = PBXBuildFile; productRef = AFD9091029A811DA009AF577 /* SBQuickLook */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,7 @@
 		AFD908F829A7F9D2009AF577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFD908FA29A7F9D2009AF577 /* SBQuickLook_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SBQuickLook_Example.entitlements; sourceTree = "<group>"; };
 		AFD908FC29A7F9D2009AF577 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AFD9090D29A80EF3009AF577 /* sample-local-pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "sample-local-pdf.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFD9091129A811DA009AF577 /* SBQuickLook in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +58,7 @@
 			children = (
 				AFD908F429A7F9D2009AF577 /* SBQuickLook_ExampleApp.swift */,
 				AFD908F629A7F9D2009AF577 /* ContentView.swift */,
+				AFD9090D29A80EF3009AF577 /* sample-local-pdf.pdf */,
 				AFD908F829A7F9D2009AF577 /* Assets.xcassets */,
 				AFD908FA29A7F9D2009AF577 /* SBQuickLook_Example.entitlements */,
 				AFD908FB29A7F9D2009AF577 /* Preview Content */,
@@ -85,6 +90,9 @@
 			dependencies = (
 			);
 			name = SBQuickLook_Example;
+			packageProductDependencies = (
+				AFD9091029A811DA009AF577 /* SBQuickLook */,
+			);
 			productName = SBQuickLook_Example;
 			productReference = AFD908F129A7F9D2009AF577 /* SBQuickLook_Example.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +121,9 @@
 				Base,
 			);
 			mainGroup = AFD908E829A7F9D1009AF577;
+			packageReferences = (
+				AFD9090F29A811DA009AF577 /* XCRemoteSwiftPackageReference "SBQuickLook" */,
+			);
 			productRefGroup = AFD908F229A7F9D2009AF577 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFD9090E29A80EF3009AF577 /* sample-local-pdf.pdf in Resources */,
 				AFD908FD29A7F9D2009AF577 /* Preview Assets.xcassets in Resources */,
 				AFD908F929A7F9D2009AF577 /* Assets.xcassets in Resources */,
 			);
@@ -277,7 +289,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -285,7 +297,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "de.sebastianbaar.SBQuickLook-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -313,7 +327,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -321,7 +335,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "de.sebastianbaar.SBQuickLook-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -350,6 +366,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AFD9090F29A811DA009AF577 /* XCRemoteSwiftPackageReference "SBQuickLook" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sebastianbaar/SBQuickLook.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AFD9091029A811DA009AF577 /* SBQuickLook */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFD9090F29A811DA009AF577 /* XCRemoteSwiftPackageReference "SBQuickLook" */;
+			productName = SBQuickLook;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AFD908E929A7F9D1009AF577 /* Project object */;
 }
