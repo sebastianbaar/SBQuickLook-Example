@@ -47,10 +47,25 @@ struct ContentView: View {
             }
         }
         .fullScreenCover(isPresented: $isShown, content: {
-            SBQuickLookView(fileItems: fileItems, configuration: configuration)
+            SBQuickLookView(fileItems: fileItems, configuration: configuration) { result in
+                switch result {
+                case .success(let successErrors):
+                    if let successErrors {
+                        print(successErrors)
+                    }
+                case .failure(let error):
+                    switch error {
+                    case .emptyFileItems:
+                        print("emptyFileItems")
+                    case .downloadError:
+                        print("downloadError")
+                    case .qlPreviewControllerError:
+                        print("qlPreviewControllerError")
+                    }
+                }
+            }
         })
     }
-
 }
 
 struct ContentView_Previews: PreviewProvider {
