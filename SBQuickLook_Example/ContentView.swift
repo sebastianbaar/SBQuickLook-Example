@@ -8,21 +8,22 @@
 import SwiftUI
 import SBQuickLook
 
+// swiftlint:disable line_length
 struct ContentView: View {
     @State var isShown = false
-    
+
     let fileItems: [SBQLFileItem]
     let configuration: SBQLConfiguration
-    
+
     init() {
         let localFileURL = Bundle.main.url(forResource: "sample-local-pdf", withExtension: "pdf")!
-        
+
         var basicAuthRequest = URLRequest(url: URL(string: "https://www.example.com")!)
         basicAuthRequest.addValue("Basic YmlsbHk6c2VjcmV0cGFzc3dvcmQ=", forHTTPHeaderField: "Authorization")
-        
+
         let localFileDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         configuration = SBQLConfiguration(localFileDir: localFileDir)
-        
+
         fileItems = [
             SBQLFileItem(url: URL(string: "https://freetestdata.com/wp-content/uploads/2021/09/Free_Test_Data_1MB_PDF.pdf")!, title: "Test PDF"),
             SBQLFileItem(url: URL(string: "https://calibre-ebook.com/downloads/demos/demo.docx")!),
@@ -36,9 +37,9 @@ struct ContentView: View {
             SBQLFileItem(url: URL(string: "https://file-examples.com/storage/fe197d899c63f609e194cb1/2017/11/file_example_MP3_5MG.mp3")!)
         ]
     }
-    
+
     var body: some View {
-        VStack {            
+        VStack {
             Button {
                 isShown.toggle()
             } label: {
@@ -47,9 +48,9 @@ struct ContentView: View {
         }
         .fullScreenCover(isPresented: $isShown, content: {
             SBQuickLookView(fileItems: fileItems, configuration: configuration)
-        })        
+        })
     }
-        
+
 }
 
 struct ContentView_Previews: PreviewProvider {
