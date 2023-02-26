@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF9644F729AB2734004B9F6E /* SBQuickLook in Frameworks */ = {isa = PBXBuildFile; productRef = AF9644F629AB2734004B9F6E /* SBQuickLook */; };
 		AFD908F529A7F9D2009AF577 /* SBQuickLook_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD908F429A7F9D2009AF577 /* SBQuickLook_ExampleApp.swift */; };
 		AFD908F729A7F9D2009AF577 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD908F629A7F9D2009AF577 /* ContentView.swift */; };
 		AFD908F929A7F9D2009AF577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD908F829A7F9D2009AF577 /* Assets.xcassets */; };
 		AFD908FD29A7F9D2009AF577 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD908FC29A7F9D2009AF577 /* Preview Assets.xcassets */; };
 		AFD9090E29A80EF3009AF577 /* sample-local-pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AFD9090D29A80EF3009AF577 /* sample-local-pdf.pdf */; };
-		AFD9091129A811DA009AF577 /* SBQuickLook in Frameworks */ = {isa = PBXBuildFile; productRef = AFD9091029A811DA009AF577 /* SBQuickLook */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFD9091129A811DA009AF577 /* SBQuickLook in Frameworks */,
+				AF9644F729AB2734004B9F6E /* SBQuickLook in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 			);
 			name = SBQuickLook_Example;
 			packageProductDependencies = (
-				AFD9091029A811DA009AF577 /* SBQuickLook */,
+				AF9644F629AB2734004B9F6E /* SBQuickLook */,
 			);
 			productName = SBQuickLook_Example;
 			productReference = AFD908F129A7F9D2009AF577 /* SBQuickLook_Example.app */;
@@ -122,7 +122,7 @@
 			);
 			mainGroup = AFD908E829A7F9D1009AF577;
 			packageReferences = (
-				AFD9090F29A811DA009AF577 /* XCRemoteSwiftPackageReference "SBQuickLook" */,
+				AF9644F529AB2734004B9F6E /* XCRemoteSwiftPackageReference "SBQuickLook" */,
 			);
 			productRefGroup = AFD908F229A7F9D2009AF577 /* Products */;
 			projectDirPath = "";
@@ -368,20 +368,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AFD9090F29A811DA009AF577 /* XCRemoteSwiftPackageReference "SBQuickLook" */ = {
+		AF9644F529AB2734004B9F6E /* XCRemoteSwiftPackageReference "SBQuickLook" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sebastianbaar/SBQuickLook.git";
+			repositoryURL = "https://github.com/sebastianbaar/SBQuickLook";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = exactVersion;
+				version = 1.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AFD9091029A811DA009AF577 /* SBQuickLook */ = {
+		AF9644F629AB2734004B9F6E /* SBQuickLook */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AFD9090F29A811DA009AF577 /* XCRemoteSwiftPackageReference "SBQuickLook" */;
+			package = AF9644F529AB2734004B9F6E /* XCRemoteSwiftPackageReference "SBQuickLook" */;
 			productName = SBQuickLook;
 		};
 /* End XCSwiftPackageProductDependency section */

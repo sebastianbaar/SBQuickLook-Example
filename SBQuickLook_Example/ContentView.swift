@@ -27,14 +27,17 @@ struct ContentView: View {
         fileItems = [
             SBQLFileItem(url: URL(string: "https://freetestdata.com/wp-content/uploads/2021/09/Free_Test_Data_1MB_PDF.pdf")!, title: "Test PDF"),
             SBQLFileItem(url: URL(string: "https://calibre-ebook.com/downloads/demos/demo.docx")!),
-            SBQLFileItem(url: URL(string: "https://invalid-url-example.com/nodata")!),
-            SBQLFileItem(url: URL(string: "https://invalid-url-example.com/nodata.no-extension")!),
-            SBQLFileItem(url: URL(string: "https://file-examples.com/storage/fe197d899c63f609e194cb1/2017/10/file_example_JPG_100kB.jpg")!),
+            SBQLFileItem(url: URL(string: "https://invalid-url-example.com/nodata")!, title: "Invalid URL"),
+            SBQLFileItem(url: URL(string: "https://invalid-url-example.com/nodata.no-extension")!, title: "Invalid URL & extension"),
+            SBQLFileItem(url: URL(string: "https://filesamples.com/samples/image/heic/sample1.heic")!, title: "HEIC image"),
             SBQLFileItem(url: localFileURL, title: "LOCAL FILE"),
-            SBQLFileItem(url: URL(string: "https://file-examples.com/storage/fe197d899c63f609e194cb1/2017/10/file_example_PNG_500kB.png")!, title: "Nice PNG Image", mediaType: "png"),
+            SBQLFileItem(url: URL(string: "https://filesamples.com/samples/image/png/sample_1280%C3%97853.png")!, title: "Nice PNG Image", mediaType: "png"),
             SBQLFileItem(url: URL(string: "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip")!),
-            SBQLFileItem(url: URL(string: "https://file-examples.com/storage/fe197d899c63f609e194cb1/2017/10/file_example_GIF_3500kB.gif")!, urlRequest: basicAuthRequest),
-            SBQLFileItem(url: URL(string: "https://file-examples.com/storage/fe197d899c63f609e194cb1/2017/11/file_example_MP3_5MG.mp3")!)
+            SBQLFileItem(url: URL(string: "https://filesamples.com/samples/image/heic/sample1.heic")!, urlRequest: basicAuthRequest),
+            SBQLFileItem(url: URL(string: "https://filesamples.com/samples/audio/mp3/sample3.mp3")!),
+            SBQLFileItem(url: URL(string: "https://filesamples.com/samples/code/swift/sample3.swift")!),
+            SBQLFileItem(url: URL(string: "https://filesamples.com/samples/code/swift/sample3.swift")!),
+            SBQLFileItem(url: URL(string: "https://developer.apple.com/augmented-reality/quick-look/models/stratocaster/fender_stratocaster.usdz")!, title: "Augmented reality object")
         ]
     }
 
@@ -49,18 +52,19 @@ struct ContentView: View {
         .fullScreenCover(isPresented: $isShown, content: {
             SBQuickLookView(fileItems: fileItems, configuration: configuration) { result in
                 switch result {
-                case .success(let successErrors):
-                    if let successErrors {
-                        print(successErrors)
+                case .success(let downloadError):
+                    if let downloadError {
+                        print(downloadError)
                     }
                 case .failure(let error):
-                    switch error {
+                    switch error.type {
                     case .emptyFileItems:
                         print("emptyFileItems")
-                    case .downloadError:
-                        print("downloadError")
                     case .qlPreviewControllerError:
                         print("qlPreviewControllerError")
+                    case .download(let errorFileItems):
+                        print("all items failed downloading")
+                        print(errorFileItems)
                     }
                 }
             }

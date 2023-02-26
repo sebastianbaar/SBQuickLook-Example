@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sebastianbaar/SBQuickLook.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "b6201908e31915de1b1379db4bb73e1491d2903b"
+        "revision" : "b4dbabe0584a5c4889e806fe7f4b1d7cff08ca08",
+        "version" : "1.0.1"
       }
     }
   ],
